@@ -1,0 +1,43 @@
+{
+  "name": "agileflow-pro",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "test:coverage": "npm run test:client:coverage && npm run test:server:coverage",
+    "test:client:coverage": "cd client && npm run test:coverage",
+    "test:server:coverage": "cd server && npm run test:coverage",
+
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "lint:fix": "npm run lint:client:fix && npm run lint:server:fix",
+    "lint:client:fix": "cd client && npm run lint:fix",
+    "lint:server:fix": "cd server && npm run lint:fix",
+
+    "format": "npm run format:client && npm run format:server",
+    "format:client": "cd client && npm run format",
+    "format:server": "cd server && npm run format",
+    "format:check": "npm run format:check:client && npm run format:check:server",
+    "format:check:client": "cd client && npm run format:check",
+    "format:check:server": "cd server && npm run format:check",
+
+    "install:all": "npm install && npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
