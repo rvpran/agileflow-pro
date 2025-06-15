@@ -44,7 +44,7 @@ jobs:
         MONGODB_URI: mongodb://admin:password123@localhost:27017/test?authSource=admin
 
     - name: Run client tests
-      run: cd client && npm test -- --watchAll=false
+      run: cd client && npx test -- --watchAll=false
       env:
         CI: true
 
